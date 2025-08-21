@@ -6,7 +6,7 @@ export default function Dashboard() {
     <>
         <Title>Dashboard | My App</Title>
         <Meta name="description" content="Halaman dashboard aplikasi" />
-   
+    
       <h1>Dashboard</h1>
     </>
   )

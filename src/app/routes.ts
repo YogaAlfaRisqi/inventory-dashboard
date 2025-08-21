@@ -2,13 +2,12 @@
 
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
-import AuthLayout from "shared/layouts/AuthLayout";
-import MainLayout from "shared/layouts/MainLayout";
+import AuthLayout from "shared/components/layouts/AuthLayout";
+import MainLayout from "shared/components/layouts/MainLayout";
 
 
 const LoginPage = lazy(() => import("features/auth/Login") );
 const Dashboard = lazy(() => import("features/dashboard/Dashboard") );
-
 
 
 export const router = createBrowserRouter([
