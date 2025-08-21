@@ -1,32 +1,25 @@
-
+import { Layout } from 'antd';
+import { Content, Footer } from 'antd/es/layout/layout';
+import React from 'react';
 import { Outlet } from 'react-router';
-import React, { useState } from 'react';
+import Header from 'shared/components/layouts/partials/Header';
+import Sidebar from 'shared/components/layouts/partials/Sidebar';
 
-import { Layout} from 'antd';
 
 
-const {Sider, Header, Content} = Layout;
-const MainLayout: React.FC = () => {
-    const [collapsed, setCollapsed] = useState(false);
-
-  return (
-    <Layout>
-      <Sider 
-        theme='light'
-        trigger={null} 
-        collapsible 
-        collapsed={collapsed}>
-      </Sider>
+const MainLayout: React.FC<{children?: React.ReactNode}> = () =>{
+  return(
+    <Layout hasSider>
+      <Sidebar/>
       <Layout>
-        {/* <Header className='bg-white'>
-        </Header> */}
-        <Content>
+        <Header/>
+        <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
           <Outlet/>
         </Content>
+        <Footer/>
       </Layout>
     </Layout>
-  )
-}
-
-
+  );
+};
+ 
 export default MainLayout;
